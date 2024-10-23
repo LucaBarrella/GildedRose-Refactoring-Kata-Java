@@ -12,9 +12,9 @@ General Rules:
 
 Specific Rules:
 
-1) Aged Brie increases in quality by 1 each day
-2) Sulfuras the quality and sellIn values never change and are always 80 and 0 respectively
-3) Backstage passes:
+1) Aged Brie increases in quality by 1 each day //! Done
+2) Sulfuras the quality and sellIn values never change and are always 80 and 0 respectively //! Done
+3) Backstage passes: //! Done
     - Increases in quality by 1 each day
     - Increases in quality by 2 when there are 10 days or less
     - Increases in quality by 3 when there are 5 days or less
@@ -24,7 +24,7 @@ Specific Rules:
 
 New Feature:
 
-New item added called "Conjured":
+New item added called "Conjured": //! Done
     - Decreases in quality by 2 each day
     - When a product has passed its sell by date (sellIn <= 0), decrease the quality by 4 each day
 
