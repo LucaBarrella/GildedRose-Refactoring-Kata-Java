@@ -5,7 +5,7 @@ public class ConjuredUpdater implements ItemUpdater {
     @Override
     public void update(Item item) {
         decrementSellIn(item);
-        item.quality -= 2;
+        decreaseQuality(item);
         decreaseQualityAfterSellIn(item);
     }
 
@@ -13,8 +13,14 @@ public class ConjuredUpdater implements ItemUpdater {
         item.sellIn--;
     }
 
+    private void decreaseQuality(Item item) {
+        if (item.quality > 0) {
+            item.quality -= 2;
+        }
+    }
+
     private void decreaseQualityAfterSellIn(Item item) {
-        if (item.sellIn < 0) {
+        if (item.sellIn < 0 && item.quality > 0) {
             item.quality -= 2;
         }
     }

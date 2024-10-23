@@ -5,21 +5,21 @@ public class AgedBrieUpdater implements ItemUpdater {
     @Override
     public void update(Item item) {
         decrementSellIn(item);
-        increaseQualityIfPossible(item);
-        increaseQualityAfterSellInIfPossible(item);
+        increaseQuality(item);
+        increaseQualityAfterSellIn(item);
     }
 
     private void decrementSellIn(Item item) {
         item.sellIn--;
     }
 
-    private void increaseQualityIfPossible(Item item) {
+    private void increaseQuality(Item item) {
         if (item.quality < 50) {
             item.quality++;
         }
     }
 
-    private void increaseQualityAfterSellInIfPossible(Item item) {
+    private void increaseQualityAfterSellIn(Item item) {
         if (item.sellIn < 0 && item.quality < 50) {
             item.quality++;
         }

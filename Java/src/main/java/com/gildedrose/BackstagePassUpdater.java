@@ -5,25 +5,26 @@ public class BackstagePassUpdater implements ItemUpdater {
     @Override
     public void update(Item item) {
         decrementSellIn(item);
-        increaseQualityIfPossible(item);
+        increaseQuality(item);
+        increaseQualityAfterTenDaysOrLess(item);
+        increaseQualityAfterFiveDaysOrLess(item);
+        qualityDropsToZeroAfterConcert(item);
     }
 
     private void decrementSellIn(Item item) {
         item.sellIn--;
     }
 
-    private void increaseQualityIfPossible(Item item) {
-        if (maxQualityCheck(item)) return;
-
-        item.quality++;
-        increaseQualityAfterTenDaysOrLess(item);
-        increaseQualityAfterFiveDaysOrLess(item);
-        qualityDropsToZeroAfterConcert(item);
+    private void increaseQuality(Item item) {
+        if (!maxQualityCheck(item)) {
+            item.quality++;
+        }
     }
 
     private boolean maxQualityCheck(Item item) {
         return item.quality >= 50;
     }
+
 
     private void increaseQualityAfterTenDaysOrLess(Item item) {
         if (item.sellIn < 11 && !maxQualityCheck(item)) {
