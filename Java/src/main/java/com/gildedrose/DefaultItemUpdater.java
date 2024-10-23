@@ -7,6 +7,7 @@ public class DefaultItemUpdater implements ItemUpdater {
         decrementSellIn(item);
         decreaseQuality(item);
         decreaseQualityAfterSellIn(item);
+        // fixName(item); //FIXME: This method is not needed
     }
 
     private void decrementSellIn(Item item) {
@@ -24,4 +25,9 @@ public class DefaultItemUpdater implements ItemUpdater {
             item.quality--;
         }
     }
+
+    // //FIXME: This method is not needed
+    // private void fixName(Item item) {
+    //     item.name = "fixme";
+    // }
 }
