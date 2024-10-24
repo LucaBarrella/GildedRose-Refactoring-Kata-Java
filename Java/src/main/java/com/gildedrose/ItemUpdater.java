@@ -1,12 +1,20 @@
 package com.gildedrose;
 
-// This interface is responsible for updating the quality of the items
+public abstract class ItemUpdater {
 
-public interface ItemUpdater {
-    void update(Item item);
+    public void update(Item item) {
+        decrementSellIn(item);
+        updateQuality(item);
+        updateQualityAfterSellIn(item);
+    }
 
-    // Todo: Create a protected method in the ItemUpdater interface that decrements the sellIn value of the item
-    // default void decrementSellIn(Item item) {
-    //     item.sellIn--;
-    // }
+    protected void decrementSellIn(Item item) {
+        item.sellIn--;
+    }
+
+    protected abstract void updateQuality(Item item);
+
+    protected void updateQualityAfterSellIn(Item item) {
+        // Default implementation does nothing
+    }
 }

@@ -1,14 +1,16 @@
 package com.gildedrose;
 
-public class SulfurasUpdater implements ItemUpdater {
-
-    // Quality of Sulfuras never changes
-    // SellIn of Sulfuras never changes
+public class SulfurasUpdater extends ItemUpdater {
 
     //TODO: Empty method or just don't implement the method?
 
     @Override
-    public void update(Item item) {
-        // Do nothing
+    protected void decrementSellIn(Item item) {
+        // Do nothing, cause sellIn never changes
+    }
+
+    @Override
+    protected void updateQuality(Item item) {
+        // Do nothing, cause quality never changes
     }
 }

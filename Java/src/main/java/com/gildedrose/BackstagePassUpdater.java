@@ -1,18 +1,13 @@
 package com.gildedrose;
 
-public class BackstagePassUpdater implements ItemUpdater {
+public class BackstagePassUpdater extends ItemUpdater {
 
     @Override
-    public void update(Item item) {
-        decrementSellIn(item);
+    protected void updateQuality(Item item) {
         increaseQuality(item);
         increaseQualityAfterTenDaysOrLess(item);
         increaseQualityAfterFiveDaysOrLess(item);
         qualityDropsToZeroAfterConcert(item);
-    }
-
-    private void decrementSellIn(Item item) {
-        item.sellIn--;
     }
 
     private void increaseQuality(Item item) {

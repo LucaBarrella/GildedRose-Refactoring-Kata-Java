@@ -1,25 +1,15 @@
 package com.gildedrose;
 
-public class ConjuredUpdater implements ItemUpdater {
+public class ConjuredUpdater extends ItemUpdater {
 
     @Override
-    public void update(Item item) {
-        decrementSellIn(item);
-        decreaseQuality(item);
-        decreaseQualityAfterSellIn(item);
-    }
-
-    private void decrementSellIn(Item item) {
-        item.sellIn--;
-    }
-
-    private void decreaseQuality(Item item) {
+    protected void updateQuality(Item item) {
         if (item.quality > 0) {
             item.quality -= 2;
         }
     }
 
-    private void decreaseQualityAfterSellIn(Item item) {
+    protected void updateQualityAfterSellIn(Item item) {
         if (item.sellIn < 0 && item.quality > 0) {
             item.quality -= 2;
         }

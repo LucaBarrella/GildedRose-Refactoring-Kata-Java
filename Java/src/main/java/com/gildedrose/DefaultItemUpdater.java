@@ -1,33 +1,18 @@
 package com.gildedrose;
 
-public class DefaultItemUpdater implements ItemUpdater {
+public class DefaultItemUpdater extends ItemUpdater {
 
     @Override
-    public void update(Item item) {
-        decrementSellIn(item);
-        decreaseQuality(item);
-        decreaseQualityAfterSellIn(item);
-        // fixName(item); //FIXME: This method is not needed
-    }
-
-    private void decrementSellIn(Item item) {
-        item.sellIn--;
-    }
-
-    private void decreaseQuality(Item item) {
+    protected void updateQuality(Item item) {
         if (item.quality > 0) {
             item.quality--;
         }
     }
 
-    private void decreaseQualityAfterSellIn(Item item) {
+    @Override
+    protected void updateQualityAfterSellIn(Item item) {
         if (item.sellIn < 0 && item.quality > 0) {
             item.quality--;
         }
     }
-
-    // //FIXME: This method is not needed
-    // private void fixName(Item item) {
-    //     item.name = "fixme";
-    // }
 }
