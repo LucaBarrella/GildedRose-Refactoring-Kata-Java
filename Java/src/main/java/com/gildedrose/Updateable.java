@@ -1,5 +1,5 @@
 package com.gildedrose;
 
-public interface Updateable extends SellInUpdateable, QualityUpdatable {
+public interface Updateable {
     void update();
 }

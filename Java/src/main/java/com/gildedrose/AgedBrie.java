@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class AgedBrie extends BaseItem {
+public class AgedBrie extends AbstractItem {
 
     public AgedBrie(Item item) {
         super(item);
@@ -8,15 +8,11 @@ public class AgedBrie extends BaseItem {
 
     @Override
     public void updateQuality() {
-        if (maxQualityNotReached()) {
-            item.quality++;
-        }
+        item.quality++;
     }
 
     @Override
     public void updateQualityAfterSellIn() {
-        if (isExpired()) {
-            item.quality++;
-        }
+        item.quality++;
     }
 }

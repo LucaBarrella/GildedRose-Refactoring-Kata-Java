@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class DefaultItem extends BaseItem {
+public class DefaultItem extends AbstractItem {
 
     public DefaultItem(Item item) {
         super(item);
@@ -8,16 +8,12 @@ public class DefaultItem extends BaseItem {
 
     @Override
     public void updateQuality() {
-        if (maxQualityNotReached()) {
-            item.quality--;
-        }
+        item.quality--;
     }
 
     @Override
     public void updateQualityAfterSellIn() {
-        if (isExpired() && maxQualityNotReached()) {
-            item.quality--;
-        }
+        item.quality--;
     }
 
 }
