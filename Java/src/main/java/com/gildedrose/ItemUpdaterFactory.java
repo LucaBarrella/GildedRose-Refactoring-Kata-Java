@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class ItemUpdaterFactory {
 
-    public static AbstractUpdater createItemUpdater(Item item) {
+    public static ItemUpdater createItemUpdater(Item item) {
         
         switch (item.name) {
 

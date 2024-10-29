@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class AgedBrieItemUpdater extends AbstractUpdater {
+public class AgedBrieItemUpdater extends ItemUpdater {
 
     public AgedBrieItemUpdater(Item item) {
         super(item);

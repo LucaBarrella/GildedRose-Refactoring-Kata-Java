@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class RegularItemUpdater extends AbstractUpdater {
+public class RegularItemUpdater extends ItemUpdater {
 
     public RegularItemUpdater(Item item) {
         super(item);
