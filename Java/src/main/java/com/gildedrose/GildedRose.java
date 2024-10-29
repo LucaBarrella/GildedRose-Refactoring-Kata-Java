@@ -38,11 +38,17 @@ class GildedRose {
         this.items = items;
     }
 
-    //! Method to updateQuality totally refactored!
-    public void updateQuality(){
+    public void updateQuality() {
         for (Item item : items) {
-            Updateable itemUpdateable = ItemFactory.createItem(item);
-            itemUpdateable.update();
+            updateItem(item);
         }
+    }
+
+    private void updateItem(Item item) {
+        UpdatableItem updatableItem = ItemFactory.createItem(item);
+        updatableItem.update();
+        //! Update the original item with the new values
+        item.sellIn = updatableItem.sellIn;
+        item.quality = updatableItem.quality;
     }
 }

@@ -1,19 +1,7 @@
 package com.gildedrose;
 
-public class DefaultItem extends AbstractItem {
-
-    public DefaultItem(Item item) {
-        super(item);
+public class DefaultItem extends UpdatableItem {
+    public DefaultItem(String name, int sellIn, int quality) {
+        super(name, sellIn, quality, new DefaultItemUpdateStrategy());
     }
-
-    @Override
-    public void updateQuality() {
-        item.quality--;
-    }
-
-    @Override
-    public void updateQualityAfterSellIn() {
-        item.quality--;
-    }
-
 }
