@@ -7,13 +7,13 @@ public class ConjuredItemUpdater extends AbstractUpdater {
     }
 
     @Override
-    protected void updateQuality(Item item) {
-        decrementQuality(item, 2);
+    protected void updateQuality() {
+        decrementQuality(2);
     }
 
     @Override
-    protected void updateQualityAfterSellIn(Item item) {
-        decrementQuality(item, 2);
+    protected void updateQualityAfterSellIn() {
+        decrementQuality(2);
     }
 
 }

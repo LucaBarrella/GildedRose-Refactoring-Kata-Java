@@ -7,18 +7,18 @@ public class BackstagePassItemUpdater extends AbstractUpdater {
     }
 
     @Override
-    protected void updateQuality(Item item) {
-        incrementQuality(item);
+    protected void updateQuality() {
+        incrementQuality();
         if (item.sellIn < 11) {
-            incrementQuality(item);
+            incrementQuality();
         }
         if (item.sellIn < 6) {
-            incrementQuality(item);
+            incrementQuality();
         }
     }
 
     @Override
-    protected void updateQualityAfterSellIn(Item item) {
+    protected void updateQualityAfterSellIn() {
         item.quality = 0;
     }
 

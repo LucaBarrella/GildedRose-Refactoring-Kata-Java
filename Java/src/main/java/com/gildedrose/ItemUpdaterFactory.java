@@ -2,8 +2,7 @@ package com.gildedrose;
 
 public class ItemUpdaterFactory {
 
-    public static ItemUpdater createItemUpdater(Item item) {
-        // ItemUpdater updater;
+    public static AbstractUpdater createItemUpdater(Item item) {
         
         switch (item.name) {
 
@@ -22,8 +21,5 @@ public class ItemUpdaterFactory {
             default:
                 return new RegularItemUpdater(item);
         }
-
-        // updater.setItem(item);
-        // return updater;
     }
 }

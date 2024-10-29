@@ -41,9 +41,8 @@ class GildedRose {
     public void updateQuality() {
         for (Item item : items) {
             //! Create an updatare that will update the exact item, avoiding the waste of creating a new object each time
-            ItemUpdater updater = ItemUpdaterFactory.createItemUpdater(item);
+            AbstractUpdater updater = ItemUpdaterFactory.createItemUpdater(item);
             updater.update();
-
         }
     }
 }

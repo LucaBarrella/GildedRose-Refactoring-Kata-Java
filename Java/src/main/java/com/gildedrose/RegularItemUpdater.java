@@ -7,13 +7,13 @@ public class RegularItemUpdater extends AbstractUpdater {
     }
 
     @Override
-    protected void updateQuality(Item item) {
-        decrementQuality(item);
+    protected void updateQuality() {
+        decrementQuality();
     }
 
     @Override
-    protected void updateQualityAfterSellIn(Item item) {
-        decrementQuality(item);
+    protected void updateQualityAfterSellIn() {
+        decrementQuality();
     }
 
 }

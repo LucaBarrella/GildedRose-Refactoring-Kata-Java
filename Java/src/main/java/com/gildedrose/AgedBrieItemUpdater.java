@@ -7,13 +7,13 @@ public class AgedBrieItemUpdater extends AbstractUpdater {
     }
 
     @Override
-    public void updateQuality(Item item) {
-        incrementQuality(item);
+    public void updateQuality() {
+        incrementQuality();
     }
 
     @Override
-    public void updateQualityAfterSellIn(Item item) {
-        incrementQuality(item);
+    public void updateQualityAfterSellIn() {
+        incrementQuality();
     }
 
 }

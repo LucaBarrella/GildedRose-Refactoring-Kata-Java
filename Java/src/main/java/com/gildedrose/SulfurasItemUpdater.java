@@ -7,7 +7,7 @@ public class SulfurasItemUpdater extends AbstractUpdater {
     }
     
     @Override
-    protected void updateQuality(Item item) {
+    protected void updateQuality() {
         // Do nothing
         //! NOTE: I don't know if the quality should be set to 0 or kept as is
         //!! NOTE 2: I don't know if the sellIn should be set to 0 or kept as is
@@ -17,7 +17,7 @@ public class SulfurasItemUpdater extends AbstractUpdater {
     }
 
     @Override
-    protected void updateQualityAfterSellIn(Item item) {
+    protected void updateQualityAfterSellIn() {
         // Do nothing
         //! NOTE: I don't know if the quality should be set to 0 or kept as is
     }
