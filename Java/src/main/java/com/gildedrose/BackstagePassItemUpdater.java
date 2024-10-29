@@ -1,6 +1,11 @@
 package com.gildedrose;
 
-public class BackstagePassItemUpdateStrategy extends AbstractItemUpdateStrategy {
+public class BackstagePassItemUpdater extends AbstractUpdater {
+
+    public BackstagePassItemUpdater(Item item) {
+        super(item);
+    }
+
     @Override
     protected void updateQuality(Item item) {
         incrementQuality(item);

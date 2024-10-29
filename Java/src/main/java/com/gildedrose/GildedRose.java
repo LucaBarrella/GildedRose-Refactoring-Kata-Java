@@ -40,15 +40,10 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            updateItem(item);
-        }
-    }
+            //! Create an updatare that will update the exact item, avoiding the waste of creating a new object each time
+            ItemUpdater updater = ItemUpdaterFactory.createItemUpdater(item);
+            updater.update();
 
-    private void updateItem(Item item) {
-        UpdatableItem updatableItem = ItemFactory.createItem(item);
-        updatableItem.update();
-        //! Update the original item with the new values
-        item.sellIn = updatableItem.sellIn;
-        item.quality = updatableItem.quality;
+        }
     }
 }

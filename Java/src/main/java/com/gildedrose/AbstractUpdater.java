@@ -1,13 +1,20 @@
 package com.gildedrose;
 
-public abstract class AbstractItemUpdateStrategy implements ItemUpdateStrategy {
+
+public abstract class AbstractUpdater implements ItemUpdater {
+
+    protected Item item;
 
     private static final int MIN_QUALITY = 0;
     private static final int MAX_QUALITY = 50;
     private static final int DEFAULT_QUALITY_CHANGE = 1;
 
+    public AbstractUpdater(Item item) {
+        this.item = item;
+    }
+    
     @Override
-    public void update(Item item) {
+    public void update() {
         decreaseDaysToSell(item);
         updateQuality(item);
         if (isExpired(item)) {
@@ -16,7 +23,7 @@ public abstract class AbstractItemUpdateStrategy implements ItemUpdateStrategy {
     }
 
     protected void decreaseDaysToSell(Item item) {
-        item.sellIn = item.sellIn - 1;
+        item.sellIn--;
     }
 
     protected boolean isExpired(Item item) {

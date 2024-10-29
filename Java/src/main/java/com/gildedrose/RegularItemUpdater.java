@@ -1,7 +1,11 @@
 package com.gildedrose;
 
-public class DefaultItemUpdateStrategy extends AbstractItemUpdateStrategy {
-    
+public class RegularItemUpdater extends AbstractUpdater {
+
+    public RegularItemUpdater(Item item) {
+        super(item);
+    }
+
     @Override
     protected void updateQuality(Item item) {
         decrementQuality(item);
@@ -11,4 +15,5 @@ public class DefaultItemUpdateStrategy extends AbstractItemUpdateStrategy {
     protected void updateQualityAfterSellIn(Item item) {
         decrementQuality(item);
     }
+
 }
